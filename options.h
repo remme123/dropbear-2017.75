@@ -310,7 +310,7 @@ Homedir is prepended unless path begins with / */
 /* Whether to log commands executed by a client. This only logs the 
  * (single) command sent to the server, not what a user did in a 
  * shell/sftp session etc. */
-/* #define LOG_COMMANDS */
+#define LOG_COMMANDS
 
 /* Window size limits. These tend to be a trade-off between memory
    usage and network performance: */
