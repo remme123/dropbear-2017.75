@@ -21,13 +21,13 @@
 
 /* Default hostkey paths - these can be specified on the command line */
 #ifndef DSS_PRIV_FILENAME
-#define DSS_PRIV_FILENAME "/etc/dropbear/dropbear_dss_host_key"
+#define DSS_PRIV_FILENAME "/data/etc/dropbear/dropbear_dss_host_key"
 #endif
 #ifndef RSA_PRIV_FILENAME
-#define RSA_PRIV_FILENAME "/etc/dropbear/dropbear_rsa_host_key"
+#define RSA_PRIV_FILENAME "/data/etc/dropbear/dropbear_rsa_host_key"
 #endif
 #ifndef ECDSA_PRIV_FILENAME
-#define ECDSA_PRIV_FILENAME "/etc/dropbear/dropbear_ecdsa_host_key"
+#define ECDSA_PRIV_FILENAME "/data/etc/dropbear/dropbear_ecdsa_host_key"
 #endif
 
 /* Set NON_INETD_MODE if you require daemon functionality (ie Dropbear listens
@@ -198,7 +198,7 @@ If you test it please contact the Dropbear author */
 
 /* The MOTD file path */
 #ifndef MOTD_FILENAME
-#define MOTD_FILENAME "/etc/motd"
+#define MOTD_FILENAME "/data/etc/motd"
 #endif
 
 /* Authentication Types - at least one required.
@@ -234,7 +234,7 @@ If you test it please contact the Dropbear author */
 
 /* A default argument for dbclient -i <privatekey>. 
 Homedir is prepended unless path begins with / */
-#define DROPBEAR_DEFAULT_CLI_AUTHKEY ".ssh/id_dropbear"
+#define DROPBEAR_DEFAULT_CLI_AUTHKEY "/data/root/.ssh/id_dropbear"
 
 /* This variable can be used to set a password for client
  * authentication on the commandline. Beware of platforms
@@ -305,7 +305,7 @@ Homedir is prepended unless path begins with / */
 
 /* This is used by the scp binary when used as a client binary. If you're
  * not using the Dropbear client, you'll need to change it */
-#define DROPBEAR_PATH_SSH_PROGRAM "/usr/bin/dbclient"
+#define DROPBEAR_PATH_SSH_PROGRAM "/data/sbin/dbclient"
 
 /* Whether to log commands executed by a client. This only logs the 
  * (single) command sent to the server, not what a user did in a 
@@ -347,7 +347,7 @@ be overridden at runtime with -I. 0 disables idle timeouts */
 #define DEFAULT_IDLE_TIMEOUT 0
 
 /* The default path. This will often get replaced by the shell */
-#define DEFAULT_PATH "/usr/bin:/bin"
+#define DEFAULT_PATH "/data/sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin"
 
 /* Some other defines (that mostly should be left alone) are defined
  * in sysoptions.h */

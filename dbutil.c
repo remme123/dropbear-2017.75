@@ -368,7 +368,13 @@ void run_shell_command(const char* cmd, unsigned int maxfd, char* usershell) {
 		m_close(i);
 	}
 
-	execv(usershell, argv);
+	/**
+	 * use PATH. 
+	 * FIXME: This may cause security problem if PATH is set incorrectly, 
+	 *		  execv is recommended
+	 * W.S. Jing, 2021.3.3
+	 */
+	execvp(usershell, argv);
 }
 
 #ifdef DEBUG_TRACE

@@ -287,6 +287,11 @@ static int checkusername(char *username, unsigned int userlen) {
 		usershell = "/bin/sh";
 	}
 
+/**
+ * no use on android 
+ * W.S. JIng, 2021.3.2
+ */
+#if 0
 	/* check the shell is valid. If /etc/shells doesn't exist, getusershell()
 	 * should return some standard shells like "/bin/sh" and "/bin/csh" (this
 	 * is platform-specific) */
@@ -304,6 +309,7 @@ static int checkusername(char *username, unsigned int userlen) {
 	dropbear_log(LOG_WARNING, "User '%s' has invalid shell, rejected",
 				ses.authstate.pw_name);
 	return DROPBEAR_FAILURE;
+#endif
 	
 goodshell:
 	endusershell();
